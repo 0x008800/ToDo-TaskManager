@@ -2,4 +2,4 @@ target/
 .idea/
 c.mv.db
 c.trace.db
-src/main/resources/
+src/main/resources/static/

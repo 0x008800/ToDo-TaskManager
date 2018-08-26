@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TaskService} from "../task.service";
 
 @Component({
   selector: 'app-add-new-task',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddNewTaskComponent implements OnInit {
 
-  constructor() { }
+  contributors: string[] = ["andrew", "kevin"];
+
+  constructor(private taskService: TaskService) { }
+
+  getContributors(): void{
+    this.taskService.getContributors().subscribe( contributors => this.contributors = contributors);
+  }
 
   ngOnInit() {
+    this.getContributors();
   }
 
 }

@@ -15,11 +15,12 @@ public abstract class ProjectUtils {
 
 
     /**
-     * this method makes json from file of contributors names
+     * makes file with contributors names to json
      *
      * @return
      * @throws Exception
      */
+    //todo split to 2 methods by logic
     public static String fileToJson()throws Exception{
        ClassLoader classLoader = ProjectUtils.class.getClassLoader();
         File file = new File(classLoader.getResource("static/contributors.txt").getFile());

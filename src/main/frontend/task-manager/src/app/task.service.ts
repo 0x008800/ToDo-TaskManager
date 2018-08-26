@@ -18,6 +18,7 @@ const httpOptions = {
 
 export class TaskService {
   private taskUrl = 'http://localhost:8080/getall';
+  private contributorsUrl = 'http://localhost:8080/getcontributors';
 
 
   constructor(
@@ -31,6 +32,13 @@ export class TaskService {
       catchError(this.handleError('getTasks', []))
       );
     }
+
+  getContributors(): Observable<string[]>{
+    return this.http.get<string[]>(this.contributorsUrl).pipe(
+      tap(contributors => this.log('fetched contributors')),
+      catchError(this.handleError('getContributors', []))
+    );
+  }
 
 
     private log(message: string){

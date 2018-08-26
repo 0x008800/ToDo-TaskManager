@@ -23,7 +23,7 @@ public abstract class ProjectUtils {
     //todo split to 2 methods by logic
     public static String fileToJson()throws Exception{
        ClassLoader classLoader = ProjectUtils.class.getClassLoader();
-        File file = new File(classLoader.getResource("static/contributors.txt").getFile());
+        File file = new File(classLoader.getResource("contributors.txt").getFile());
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         List<String> lines = new ArrayList<>();
         String line;
